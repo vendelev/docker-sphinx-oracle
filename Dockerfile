@@ -1,6 +1,6 @@
 FROM centurylink/sphinx
 
-RUN yum install -y libaio unixODBC-devel
+RUN yum install -y libaio
 
 ADD source/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm /tmp
 ADD source/oracle-instantclient12.1-odbc-12.1.0.2.0-1.x86_64.rpm /tmp

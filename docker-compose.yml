@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+    sphinx:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        restart: always
+        ports:
+            - "9312:9312"
+            - "9306:9306"
+        volumes:
+            - ./idx:/var/idx/sphinx
+            - ./log:/var/log/sphinx
+            - ./lib:/var/lib/sphinx
+            - ./run:/var/run/sphinx
+            - ./diz:/var/diz/sphinx
+            - ./sphinx.conf:/usr/local/etc/sphinx.conf
+            - ./odbc.ini:/etc/odbc.ini
+            - ./odbcinst.ini:/etc/odbcinst.ini
